@@ -6,6 +6,18 @@
 
 Custom, authenticated API instructions and starter pack for BEW 1.3 students!
 
+## API Calls
+
+### GET 
+If the user uses "/cars" it will pull all the cars in the database and display.
+
+### POST 
+If the user uses "/uploadCars" it will add a new car in the database.
+
+### PUT
+
+### DELETE
+
 ## Installation
 
 1. Fork this repository and clone your fork locally.

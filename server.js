@@ -34,6 +34,14 @@ app.use(checkAuth);
 
 // TODO: Add each controller here, after all middleware is initialized.
 
+// Controllers
+require('./controllers/car.js')
+
+// Routes
+app.get('/', (req,res) => {
+  res.send('Splash page')
+})
+
 
 app.listen(3000, () => {
     console.log('API listening on port http://localhost:3000!');
