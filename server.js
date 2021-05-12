@@ -43,8 +43,6 @@ app.get('/', (req,res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('API listening on port http://localhost:3000!');
-  });
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;

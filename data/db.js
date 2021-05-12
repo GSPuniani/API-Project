@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 const assert = require('assert')
 
-const url = "mongodb://localhost/f1-db"
+const url = "mongodb+srv://admin:wawnum-zaqwyx-Kanhu5@customapi.vpoac.mongodb.net/f1-db?retryWrites=true&w=majority"
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
