@@ -4,9 +4,8 @@
             {{#each queries}}
                 <li class="list-group-item">
                     <div class="lead">
-                        <a href="/queries/{{this._id}}">{{this.title}}</a>
+                        <a href="/queries/{{this._id}}">{{this.season}}, {{this.round}}</a>
                     </div>
-                    <a href="{{this.url}}" target="_blank">{{this.url}}</a>
                 </li>
             {{/each}}
         </ul>

@@ -1,55 +1,56 @@
+const { Query } = require('mongoose');
 const Car = require('../models/query')
 
 module.exports = function(app) {
     app.get('/', (req, res) => {
-        Post.find({}).lean()
-          .then(posts => {
-            res.render('posts-index', { posts });
+        Query.find({}).lean()
+          .then(queries => {
+            res.render('queries-index', { queries });
           })
           .catch(err => {
             console.log(err.message);
           })
       })
 
-    app.post('/uploadCar', (req,res) => {
-        const newCar = new Car(req.body)
+    app.post('/createQuery', (req,res) => {
+        const newQuery = new Query(req.body)
 
-        newCar.save((err, newCar) => {
+        newQuery.save((err, newQuery) => {
             if(err) console.log(err)
             return res.redirect('/')
         })
     })
 
-    app.put('/updateCar', (req,res) => {
-        const carToUpdate = null
+    app.put('/updateQuery', (req,res) => {
+        const queryToUpdate = null
         
-        Car.find({_id: req.body.ObjectId}, (err, car) => {
+        Query.find({_id: req.body.ObjectId}, (err, query) => {
             if(err) console.log(err)
-            else carToUpdate = car
+            else queryToUpdate = car
         })
 
-        if(carToUpdate) {
-            carToUpdate.save((err, updatedCar) => {
+        if(queryToUpdate) {
+            queryToUpdate.save((err, updatedQuery) => {
                 if(err) console.log(err)
-                return res.json(updatedCar)
+                return res.json(updatedQuery)
             })
         }
 
         return res.redirect('/')
     })
 
-    app.delete('/removeCar', (req,res) => {
-        const carToDelete = null
+    app.delete('/deleteQuery', (req,res) => {
+        const queryToDelete = null
 
-        Car.find({_id: req.body.ObjectId}, (err, car) => {
+        Query.find({_id: req.body.ObjectId}, (err, query) => {
             if(err) console.log(err)
-            else carToDelete = car
+            else queryToDelete = query
         })
 
-        if(carToDelete) {
-            carToDelete.delete((err, deletedCar) => {
+        if(queryToDelete) {
+            queryToDelete.delete((err, deletedQuery) => {
                 if(err) console.log(err)
-                return res.json(deletedCar)
+                return res.json(deletedQuery)
             })
         }
 

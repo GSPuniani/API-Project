@@ -30,22 +30,22 @@ var checkAuth = (req, res, next) => {
 app.use(checkAuth);
 
 
-// Routes
-// app.get('/', (req,res) => {
-//   res.send('Splash page')
-// })
-
-app.get('/posts/new', (req, res) => {
-  // Render the new-posts view
-  res.render('posts-new');
-})
-
 // Connect to database
 require('./data/db');
 
 // Controllers
 require('./controllers/query.js')
+require('./controllers/auth.js')
 
+// Routes
+// app.get('/', (req,res) => {
+//   res.send('Splash page')
+// })
+
+app.get('/queries/new', (req, res) => {
+  // Render the new-queries view
+  res.render('queries-new');
+})
 
 app.listen(process.env.PORT || 3000);
 

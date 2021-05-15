@@ -1,21 +1,17 @@
 <div class="row">
   <div class="col-sm-4 col-sm-offset-4">
-    <form action="/posts/new" method="post">
-      <legend>New Post</legend>
+    <form action="/queries/new" method="post">
+      <legend>New Query</legend>
       <div class="form-group">
-        <label for="post-title">Title</label>
-        <input type="text" name="title" class="form-control" id="post-title" placeholder="Title">
+        <label for="query-season">Season</label>
+        <input type="number" name="season" class="form-control" id="query-season" placeholder="1950">
       </div>
       <div class="form-group">
-        <label for="post-url">Url</label>
-        <input type="url" name="url" class="form-control" id="post-url" placeholder="https://www.google.com">
-      </div>
-      <div class="form-group">
-        <label for="post-summary">Summary</label>
-        <textarea name="summary" class="form-control" id="post-summary" placeholder="Summary"></textarea>
+        <label for="query-round">Round</label>
+        <input type="number" name="round" class="form-control" id="query-round" placeholder="1">
       </div>
       <div class='text-right'>
-        <button type="submit" class="btn btn-primary">Create Post</button>
+        <button type="submit" class="btn btn-primary">Create Query</button>
       </div>
     </form>
   </div>
