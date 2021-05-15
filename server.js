@@ -15,8 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 app.use(cookieParser());
 
-require('./data/db');
-
 var checkAuth = (req, res, next) => {
   console.log("Checking authentication");
   if (typeof req.cookies.nToken === "undefined" || req.cookies.nToken === null) {
@@ -32,15 +30,21 @@ var checkAuth = (req, res, next) => {
 app.use(checkAuth);
 
 
-// TODO: Add each controller here, after all middleware is initialized.
+// Routes
+// app.get('/', (req,res) => {
+//   res.send('Splash page')
+// })
+
+app.get('/posts/new', (req, res) => {
+  // Render the new-posts view
+  res.render('posts-new');
+})
+
+// Connect to database
+require('./data/db');
 
 // Controllers
-require('./controllers/car.js')
-
-// Routes
-app.get('/', (req,res) => {
-  res.send('Splash page')
-})
+require('./controllers/query.js')
 
 
 app.listen(process.env.PORT || 3000);

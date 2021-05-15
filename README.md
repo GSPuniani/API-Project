@@ -41,8 +41,5 @@ If the user uses "/uploadCars" it will add a new car in the database.
 
 ### Heroku
 
-Follow this [Node.js Deployment Guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs) to deploy your application on Heroku. Be sure to complete all of the steps!
+This project has been deployed live on Heroku. It can be viewed by simply clicking the following link: https://bew1-3-custom-api.herokuapp.com. 
 
-## [BEW 1.3] Project Requirements
-
-* View the [**requirements document**](https://github.com/Product-College-Courses/BEW-1.2-Authentication-and-Associations/blob/master/Projects/02-Custom-API-Project.md) in the [Class Repository](https://github.com/Product-College-Courses/BEW-1.2-Authentication-and-Associations).

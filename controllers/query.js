@@ -1,12 +1,15 @@
-const Car = require('../models/car')
+const Car = require('../models/query')
 
 module.exports = function(app) {
-    app.get('/cars', (req,res) => {
-        Car.find({}, (err, cars) => {
-            if(err) console.log(err)
-            else(res.json(cars))
-        })
-    })
+    app.get('/', (req, res) => {
+        Post.find({}).lean()
+          .then(posts => {
+            res.render('posts-index', { posts });
+          })
+          .catch(err => {
+            console.log(err.message);
+          })
+      })
 
     app.post('/uploadCar', (req,res) => {
         const newCar = new Car(req.body)
