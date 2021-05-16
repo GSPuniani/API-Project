@@ -33,6 +33,7 @@ describe("Basic Test Routes", function() {
       });
   });
 
+  // Test READ route
   it("Get a list of queries", (done => {
     chai
       .request(app)
@@ -46,19 +47,8 @@ describe("Basic Test Routes", function() {
       });
   }));
 
-  it("Add a query to the DB", (done => {
-    chai
-      .request(app)
-      .get("/createQuery")
-      .end(function(err, res) {
-      if (err) {
-          return done(err);
-      }
-      res.status.should.be.equal(200);
-      return done(); // Call done if the test completed successfully.
-      });
-  }));
 
+  // Test UPDATE route
   it("Update an existing query in the DB", (done => {
     chai
       .request(app)
@@ -72,6 +62,7 @@ describe("Basic Test Routes", function() {
       });
   }));
 
+  // Test DELETE route
   it("Remove an existing query from the DB", (done => {
     chai
       .request(app)
@@ -85,6 +76,7 @@ describe("Basic Test Routes", function() {
       });
   }));
 
+  // Test CREATE route
   describe('Queries', function() {
 
     const agent = chai.request.agent(server);

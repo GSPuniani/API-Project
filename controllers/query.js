@@ -15,9 +15,10 @@ module.exports = function(app) {
 
     // Show individual query
     app.get("/queries/:id", function(req, res) {
+        var currentUser = req.user;
         // LOOK UP THE QUERY
         Query.findById(req.params.id).lean().then((query) => {
-          res.render('queries-show', { query })
+          res.render('queries-show', { query, currentUser })
         }).catch((err) => {
           console.log(err.message)
         })
