@@ -48,12 +48,13 @@ app.get('/', (req, res) => {
   res.render('queries-new');
 })
 
-// Connect to database
-require('./data/db');
 
 // Controllers
-require('./controllers/query.js')
-require('./controllers/auth.js')
+require('./controllers/query.js')(app);
+require('./controllers/auth.js')(app)
+
+// Connect to database
+require('./data/db');
 
 app.listen(process.env.PORT || 3000);
 
