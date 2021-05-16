@@ -1,16 +1,16 @@
-const { Query } = require('mongoose');
-const Car = require('../models/query')
+const Query = require('../models/query')
 
 module.exports = function(app) {
-    app.get('/', (req, res) => {
+    app.get('/queries', (req, res) => {
+        var currentUser = req.user;
         Query.find({}).lean()
           .then(queries => {
-            res.render('queries-index', { queries });
+            res.render('queries-index', { queries, currentUser });
           })
           .catch(err => {
             console.log(err.message);
           })
-      })
+    })
 
     app.post('/createQuery', (req,res) => {
         const newQuery = new Query(req.body)

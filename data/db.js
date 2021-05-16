@@ -15,7 +15,7 @@ mongoose.connect(
   },
   function(err, db) {
     assert.equal(null, err);
-    console.log("Connected successfully to database");
+    console.log(`Connected to ${url}`);
 
     // db.close(); turn on for testing
   }
